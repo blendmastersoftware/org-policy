@@ -51,3 +51,9 @@ These open-source libraries were used to further simplify GitHub API interactiio
 4. Update the webhook _Payload URL_
 ![Webhook payload URL](./docs/GitHub%20webhook%20payload%20url.jpg)
 5. Create another repository within the organization and verify the functionality.
+
+## Additional considerations
+
+- Submit a feature request to the product team to allow configuring certain repository settings at the organization level and having all repos inherit these settings, similar to [Cross-repo branch policies](https://docs.microsoft.com/en-us/azure/devops/repos/git/repository-settings?view=azure-devops&tabs=browser#cross-repo-branch-policies) in Azure DevOps.
+- Run a one-time update to enable branch protection for existing repositories.
+- Subscribe to the [branch_protection_rule](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#branch_protection_rule) event to audit and correct rule changes after the initial repo configuration.
