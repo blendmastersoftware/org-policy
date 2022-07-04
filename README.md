@@ -40,3 +40,14 @@ These open-source libraries were used to further simplify GitHub API interactiio
 ![Webhook events](./docs/GitHub%20webhook%20events.jpg)
 6. Create a new repository within the organization. Navigate to repository _Settings_ > _Branches_ and verify that a branch protection rule was automatically created for the default branch.
 ![Branch protection rules](./docs/GitHub%20branch%20protection%20rules.jpg)
+
+## Deployment instructions
+
+1. Deploy the Azure Function by following the [Continuous delivery by using GitHub Action](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-github-actions).
+2. Set the `GitHubAuthToken` and `GitHubUser` application settings
+![Application settings](./docs/Azure%20Function%20application%20settings.jpg)
+3. Copy the function URL
+![Get function URL](./docs/Azure%20Function%20get%20url.jpg)
+4. Update the webhook _Payload URL_
+![Webhook payload URL](./docs/GitHub%20webhook%20payload%20url.jpg)
+5. Create another repository within the organization and verify the functionality.
