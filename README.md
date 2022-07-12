@@ -4,7 +4,19 @@ Apply branch protection settings to all new repositories within an organization.
 
 ## Solution overview
 
-![Sequence diagram](./docs/GitHub%20branch%20protection%20policy.png)
+```mermaid
+sequenceDiagram
+  User ->> GitHub: Create new repo
+  note right of GitHub: User creates a new repo in the GitHub organization
+  GitHub ->> Azure Function: Repo created event
+  note right of Azure Function: GitHub posts a webhook event with the new repo information
+  Azure Function ->> GitHub: Create an issue
+  note right of Azure Function: Call GitHub API to create a new issue for notification purposes
+  Azure Function ->> GitHub: Protect default branch
+  note right of Azure Function: Call GitHub API to protect the default branch in the new repo
+  Azure Function ->> GitHub: Close the issue
+  note right of Azure Function: @mention the user and close the issue
+```
 
 ## Implementation approach
 
